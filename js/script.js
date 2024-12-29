@@ -2,7 +2,7 @@
   'use strict'
   const main = document.querySelector('#main')
   const addButton = document.querySelector('#add')
-  const exportToExel = document.querySelector('#export')
+  const exportToExcel = document.querySelector('#export')
 
   function toggleClass (e) {
     e.stopPropagation()
@@ -122,14 +122,14 @@
       }
       const remove = new CreateOneWindow('td', 'remove')
       const left = new CreateOneWindow('td', '<')
-      const rigth = new CreateOneWindow('td', '>')
-      rigth.onclick = nextElement.bind(rigth)
+      const right = new CreateOneWindow('td', '>')
+      right.onclick = nextElement.bind(right)
       left.onclick = prevElement.bind(left)
       remove.onclick = removeElement.bind(remove)
 
       this.line.appendChild(remove)
       this.line.appendChild(left)
-      this.line.appendChild(rigth)
+      this.line.appendChild(right)
       table.appendChild(this.row)
       main.appendChild(table)
     }
@@ -148,7 +148,7 @@
     }
   })()
   document.getElementById('add-text-to-selected').addEventListener('click', addTextToSelected)
-  exportToExel.addEventListener('click', () => tableToExcel('table'))
+  exportToExcel.addEventListener('click', () => tableToExcel('table'))
   addButton.addEventListener('click', () => {
     const ner = new CreateRow(getValue('#number'), getValue('#name'))
   })
