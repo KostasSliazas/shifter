@@ -115,7 +115,7 @@
         }
         const elem = new CreateOneWindow('td', fill)
         elem.align = 'center'
-        elem.className = 'day'
+        elem.className = 'Name'
         elem.onclick = toggleClass.bind(elem)
         elem.ondblclick = addText.bind(elem)
         this.line.appendChild(elem)
@@ -152,5 +152,5 @@
   addButton.addEventListener('click', () => {
     const ner = new CreateRow(getValue('#number'), getValue('#name'))
   })
-  new CreateRow (getValue('#number'), 'day')
+  new CreateRow (getValue('#number'), 'Name')
 })()
