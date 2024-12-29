@@ -57,18 +57,34 @@
     return listOfAll
   }
 
-  function nextElement () {
-    getAllDivs(this).reduce((previous, current) => {
-      console.log(previous, current)
-      if (previous && previous.innerText) {
-        current.innerText = current.previousElementSibling.innerText
-        previous.innerText = ''
-      }
-    })
+  function nextElement() {
+    const elements = getAllDivs(this);
+    if (elements.length < 2) return; // No need to rotate if less than 2 elements
+  
+    const lastText = elements[elements.length - 1].innerText;
+  
+    // Shift each element's text content to the next one
+    for (let i = elements.length - 1; i > 0; i--) {
+      elements[i].innerText = elements[i - 1].innerText;
+    }
+  
+    // Move the last element's text to the first
+    elements[0].innerText = lastText;
   }
-
-  function prevElement () {
-    console.log(getAllDivs(this))
+  
+  function prevElement() {
+    const elements = getAllDivs(this);
+    if (elements.length < 2) return;
+  
+    const firstText = elements[0].innerText;
+  
+    // Shift each element's text content to the previous one
+    for (let i = 0; i < elements.length - 1; i++) {
+      elements[i].innerText = elements[i + 1].innerText;
+    }
+  
+    // Move the first element's text to the last
+    elements[elements.length - 1].innerText = firstText;
   }
 
   function CreateRow (days, name) {
@@ -118,6 +134,7 @@
       main.appendChild(table)
     }
   }
+
 
   const tableToExcel = (function () {
     const uri = 'data:application/vnd.ms-excel;base64,'
