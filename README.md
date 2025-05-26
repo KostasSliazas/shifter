@@ -14,6 +14,3 @@ ShifterX is a web application designed to facilitate the export of table data to
 
 3. **Export to Excel**: Click the "Export to Excel" button to download your table data in Excel format.
 
-## Contributing
-
-Contributions are welcome! Please fork the repository and submit a pull request with your improvements.
