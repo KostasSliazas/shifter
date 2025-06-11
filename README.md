@@ -4,7 +4,7 @@ ShifterX is a web application designed to facilitate the export of table data to
 
 ## Features
 
-- **Export to Excel**: Easily export your table data to Excel for further analysis and sharing.
+- **Export to Excel**: Easily export your table data to Excel for further analysis and sharing. Move cells left/right.
 
 ## Usage
 
